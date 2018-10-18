@@ -1,0 +1,54 @@
+<!-- Icon by itself 
+<span class="mdi mdi-android"></span>
+ 
+<button mat-icon-button>
+  <span class="mdi mdi-home"></span>
+</button>
+ You can also combine an icon and text together 
+<button mat-button>
+  <span class="mdi mdi-code-tags"></span>
+  View source
+</button>
+-->
+
+<div *ngIf="current">
+  <div fxLayout="row">
+    <div fxFlex="55%" class="mat-title no-margin">
+      {{current.city}}, {{current.country}}
+    </div>
+    <div fxFlex class="right mat-subheading-2 no-margin">
+      {{current.date | date:'EEEE MMM d'}}{{getOrdinal(current.date)}}
+    </div>
+  </div>
+  <div fxLayout="row">
+    <div fxFlex="55%">
+      <img style="zoom: 175%" [src]='current.image' alt="la temperature">
+    </div>
+
+    <div fxFlex class="right no-margin">
+      <p class="mat-display-3">{{current.temperature | number:'1.0-0'}}
+        <span class="mat-display-1 unit">°F</span>
+      </p>
+    </div>
+  </div>
+
+  <div class="center mat-caption">{{current.description}}</div>
+</div>
+<!--
+<br>
+<div>
+  <span class="mdi mdi-account-star"></span>
+  <span class="mdi mdi-account mdi-rotate-45"></span>
+</div>
+
+<br>
+<span class="mdi mdi-bookmark" aria-hidden> Bookmark Item
+  <br><br>
+  <div class="mdi-set">
+    <span class="mdi-star"></span>
+    <span class="mdi-star"></span>
+    <span class="mdi-star"></span>
+    <span class="mdi-star-outline"></span>
+    <span class="mdi-star-outline"></span>
+  </div>
+-->
